@@ -17,6 +17,8 @@ var_dump($m->getOption(Memcached::OPT_HASH) == Memcached::HASH_DEFAULT);
 $m->setOption(Memcached::OPT_HASH, Memcached::HASH_MURMUR);
 var_dump($m->getOption(Memcached::OPT_HASH) == Memcached::HASH_MURMUR);
 
+$m->setOption(Memcached::OPT_HASH, Memcached::HASH_MURMUR3);
+var_dump($m->getOption(Memcached::OPT_HASH) == Memcached::HASH_MURMUR3);
 
 $m->setOption(Memcached::OPT_COMPRESSION_TYPE, Memcached::COMPRESSION_ZLIB);
 var_dump($m->getOption(Memcached::OPT_COMPRESSION_TYPE) == Memcached::COMPRESSION_ZLIB);
@@ -35,6 +37,7 @@ Warning: Memcached::getOption(): no servers defined in %s on line %d
 NULL
 
 Warning: Memcached::setOption(): bad key provided in %s on line %d
+bool(true)
 bool(true)
 bool(true)
 bool(true)

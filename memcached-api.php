@@ -29,6 +29,8 @@ class Memcached {
 
 	const HASH_MURMUR;
 
+    const HASH_MURMUR3;
+
 	const OPT_DISTRIBUTION;
 
 	const DISTRIBUTION_MODULA;
