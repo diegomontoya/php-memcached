@@ -573,7 +573,7 @@ static void php_memc_get_impl(INTERNAL_FUNCTION_PARAMETERS, zend_bool by_key)
 	MEMC_METHOD_FETCH_OBJECT;
 	i_obj->rescode = MEMCACHED_SUCCESS;
 
-	if (key_len == 0 || strchr(key, ' ')) {
+	if (key_len == 0) {
 		i_obj->rescode = MEMCACHED_BAD_KEY_PROVIDED;
 		RETURN_FROM_GET;
 	}
@@ -1445,7 +1445,7 @@ static void php_memc_store_impl(INTERNAL_FUNCTION_PARAMETERS, int op, zend_bool 
 	MEMC_METHOD_FETCH_OBJECT;
 	i_obj->rescode = MEMCACHED_SUCCESS;
 
-	if (key_len == 0 || strchr(key, ' ')) {
+	if (key_len == 0) {
 		i_obj->rescode = MEMCACHED_BAD_KEY_PROVIDED;
 		RETURN_FALSE;
 	}
@@ -1595,7 +1595,7 @@ static void php_memc_cas_impl(INTERNAL_FUNCTION_PARAMETERS, zend_bool by_key)
 	MEMC_METHOD_FETCH_OBJECT;
 	i_obj->rescode = MEMCACHED_SUCCESS;
 
-	if (key_len == 0 || strchr(key, ' ')) {
+	if (key_len == 0) {
 		i_obj->rescode = MEMCACHED_BAD_KEY_PROVIDED;
 		RETURN_FALSE;
 	}
@@ -1713,7 +1713,7 @@ static void php_memc_delete_impl(INTERNAL_FUNCTION_PARAMETERS, zend_bool by_key)
 	MEMC_METHOD_FETCH_OBJECT;
 	i_obj->rescode = MEMCACHED_SUCCESS;
 
-	if (key_len == 0 || strchr(key, ' ')) {
+	if (key_len == 0) {
 		i_obj->rescode = MEMCACHED_BAD_KEY_PROVIDED;
 		RETURN_FALSE;
 	}
@@ -1813,7 +1813,7 @@ static void php_memc_incdec_impl(INTERNAL_FUNCTION_PARAMETERS, zend_bool by_key,
 	MEMC_METHOD_FETCH_OBJECT;
 	i_obj->rescode = MEMCACHED_SUCCESS;
 
-	if (key_len == 0 || strchr(key, ' ')) {
+	if (key_len == 0) {
 		i_obj->rescode = MEMCACHED_BAD_KEY_PROVIDED;
 		RETURN_FALSE;
 	}
